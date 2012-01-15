@@ -1,0 +1,15 @@
+name: SlimeBlocker
+main: com.dkabot.SlimeBlocker.SlimeBlocker
+version: 1.0
+author: dkabot
+database: true
+description: >
+            Disables slimes in certain chunks.
+commands:
+  slimeblocker:
+    description: Disables slimes in the chunk the user is standing in.
+    usage: /<command>
+permissions:
+    slimeblocker.use:
+      description: Allows the wielder to use the command if not OP.
+      
