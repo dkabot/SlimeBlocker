@@ -6,8 +6,6 @@ import java.util.logging.Logger;
 
 import javax.persistence.PersistenceException;
 
-import org.bukkit.event.Event;
-import org.bukkit.event.entity.EntityListener;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,8 +18,7 @@ public class SlimeBlocker extends JavaPlugin {
 		setupDatabase();
 		Com = new Command(this);
 		getCommand("slimeblocker").setExecutor(Com);
-		EntityListener elistener = new SBListener(this);
-	    this.getServer().getPluginManager().registerEvent(Event.Type.CREATURE_SPAWN,elistener, Event.Priority.Low, this);
+		new SBListener(this);
 		this.log.info( pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled.");
 	}
 	@Override
